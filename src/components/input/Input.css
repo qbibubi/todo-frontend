@@ -20,3 +20,8 @@ button {
 .note-input button {
     background-color: var(--accent);
 }
+
+
+.note-input button:active {
+    background-color: rgb(103, 202, 136);
+}

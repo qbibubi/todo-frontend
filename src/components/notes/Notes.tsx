@@ -1,47 +1,37 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Input from '../input/Input';
 import './Notes.css'
 
-interface Notes {
-    title: string,
-    text: string,
-    id: string,
-    date: Date;
+interface INote {
+    _id: string
+    title: string 
+    body: string 
+    date: Date
+    color?: string 
 }
 
-const Notes = (props: Notes) => (<div></div>); 
-
-export default () => {
-    const [data, setData] = useState([
-        { title: 'Loading titles...', text: 'Loading note...', id: '5e39493e', date: '2022-07-07' },
-        { title: 'Loading titles...', text: 'Loading note...', id: '58c2001d', date: '2022-07-07' },
-        { title: 'Loading titles...', text: 'Loading note...', id: '93a1f1cc', date: '2022-07-07' },
-    ]);
+const Notes = (props: INote) => {
+    const [data, setData] = useState(
+        { _id: '0x0', title: 'Loading titles...', body: 'Loading bodies...', date: new Date(), color: '#0x0' }
+    );
 
     const handleCreate = () => {
         const title = document.querySelector('.title-input') as HTMLInputElement;
-        const text = document.querySelector('.text-input') as HTMLInputElement;
+        const body = document.querySelector('.text-input') as HTMLInputElement;
+        const date = new Date();
 
-        if (title.value.trim() && text.value.trim()) {
-            // set the thing here and push a new note
-
-
-
-        }
-    }
-
-    const handleDelete = (id: string) => {
+        if (title.value.trim() || body.value.trim()) {}
 
     }
 
     return (
         <>
-            <Input handleCreate={handleCreate}/>
-            <div className=''>
-                <div className='note'>
-                    <Notes />
-                </div>
+            <Input />
+            <div className='note' key={data._id}>
+                
             </div>
         </>
-    );
+    )
 }
+
+export default Notes;
