@@ -14,15 +14,17 @@ body {
 
 .main-content {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+    flex-direction: column;
 }
 
 .notes-container {
     display: grid;
     grid-template-columns: repeat(5, 3rem);
     grid-template-rows: repeat(3, 3rem);
+    grid-template-areas: 
+        ". . . . ."
+        ". . . . ."
+        ". . . . .";
+    gap: 1rem 1rem;
 }
