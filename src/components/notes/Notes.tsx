@@ -2,14 +2,14 @@ import { useState } from 'react';
 import Input from '../input/Input';
 import './Notes.css'
 
-interface Note {
+interface Notes {
     title: string,
     text: string,
     id: string,
     date: Date;
 }
 
-const Notes = (props: Note) => {};
+const Notes = (props: Notes) => (<div></div>); 
 
 export default () => {
     const [data, setData] = useState([
@@ -19,10 +19,15 @@ export default () => {
     ]);
 
     const handleCreate = () => {
-        const title = document.querySelector('.title-input');
-        const text = document.querySelector('.text-input');
+        const title = document.querySelector('.title-input') as HTMLInputElement;
+        const text = document.querySelector('.text-input') as HTMLInputElement;
+
+        if (title.value.trim() && text.value.trim()) {
+            // set the thing here and push a new note
 
 
+
+        }
     }
 
     const handleDelete = (id: string) => {
@@ -32,6 +37,11 @@ export default () => {
     return (
         <>
             <Input handleCreate={handleCreate}/>
+            <div className=''>
+                <div className='note'>
+                    <Notes />
+                </div>
+            </div>
         </>
     );
 }
