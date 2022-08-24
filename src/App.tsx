@@ -1,8 +1,15 @@
 import React from 'react'
+import Note from './components/note/Note'
+import Input from './components/input/Input'
 
 const App = () => {
     return (
-        <h1>Hello App</h1>
+        <div className='main-content'>
+            <Input />
+            <div className='notes-container'>
+                <Note title='hello' text='XDDDDD' />    
+            </div>
+        </div>
     )
 }
 
