@@ -1,4 +1,4 @@
-.notes-container {
+.notes-wrapper {
     display: grid;
     grid-template-columns: repeat(5, 3rem);
     grid-template-rows: repeat(3, 3rem);
