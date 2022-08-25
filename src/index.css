@@ -17,14 +17,3 @@ body {
     align-items: center;
     flex-direction: column;
 }
-
-.notes-container {
-    display: grid;
-    grid-template-columns: repeat(5, 3rem);
-    grid-template-rows: repeat(3, 3rem);
-    grid-template-areas: 
-        ". . . . ."
-        ". . . . ."
-        ". . . . .";
-    gap: 1rem 1rem;
-}
