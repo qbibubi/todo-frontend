@@ -16,14 +16,15 @@ const Notes: React.FC<INoteProps> = ({data}: INoteProps) => {
         const body = document.querySelector('.body-input') as HTMLInputElement;
 
         if (title.value.trim() || body.value.trim()) {
-            // WIP
+            // create unique id for note
+            // take the {data}: INoteProps and apply the values to it
         }
     }
 
     return (
         <>
             <Input onClick={handleClick}/>
-            <div className='note-wrapper'>
+            <div className='notes-wrapper'>
                 {data.map(note => {
                     return <Note 
                         id={note.id}
