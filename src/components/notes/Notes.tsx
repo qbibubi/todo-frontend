@@ -1,34 +1,18 @@
-import React, { useState } from 'react';
-import Input from '../input/Input';
+import INote from '../../interfaces/INote';
 import './Notes.css'
 
-interface INote {
-    _id: string
-    title: string 
-    body: string 
-    date: Date
-    color?: string 
+interface INoteProps {
+    data: INote[];
 }
 
-const Notes = (props: INote) => {
-    const [data, setData] = useState(
-        { _id: '0x0', title: 'Loading titles...', body: 'Loading bodies...', date: new Date(), color: '#0x0' }
-    );
 
-    const handleCreate = () => {
-        const title = document.querySelector('.title-input') as HTMLInputElement;
-        const body = document.querySelector('.text-input') as HTMLInputElement;
-        const date = new Date();
-
-        if (title.value.trim() || body.value.trim()) {}
-
-    }
-
+const Notes: React.FC<INoteProps> = ({data}: INoteProps) => {
     return (
         <>
-            <Input />
-            <div className='note' key={data._id}>
-                
+            <div className='note-wrapper'>
+                <div className='note' >
+
+                </div>
             </div>
         </>
     )
