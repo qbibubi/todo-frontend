@@ -1,6 +1,10 @@
 import './Input.css'
 
-const Input = (handleCreate: any) => (
+interface IProps {
+    onClick?: React.MouseEventHandler
+}
+
+const Input: React.FC<IProps> = ({onClick}: IProps) => (
     <div className='note-input'>
         <input
             className='title-input'
@@ -11,7 +15,7 @@ const Input = (handleCreate: any) => (
             className='text-input'
             placeholder='Take a note...'
         />
-        <button onClick={handleCreate}>Add note</button>
+        <button onClick={onClick}>Add note</button>
     </div>
 ); 
 
