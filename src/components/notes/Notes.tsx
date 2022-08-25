@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import INote from '../../interfaces/INote';
 import Input from '../input/Input';
 import Note from '../note/Note';
@@ -8,9 +9,20 @@ interface INoteProps {
 }
 
 const Notes: React.FC<INoteProps> = ({data}: INoteProps) => {
+    const [noteData, setNoteData] = useState()
+    
+    const handleClick = () => {
+        const title = document.querySelector('.title-input') as HTMLInputElement;
+        const body = document.querySelector('.body-input') as HTMLInputElement;
+
+        if (title.value.trim() || body.value.trim()) {
+            // WIP
+        }
+    }
+
     return (
         <>
-            <Input />
+            <Input onClick={handleClick}/>
             <div className='note-wrapper'>
                 {data.map(note => {
                     return <Note 

@@ -12,7 +12,7 @@ const Input: React.FC<IProps> = ({onClick}: IProps) => (
             placeholder='Title'
         />
         <textarea
-            className='text-input'
+            className='body-input'
             placeholder='Take a note...'
         />
         <button onClick={onClick}>Add note</button>
