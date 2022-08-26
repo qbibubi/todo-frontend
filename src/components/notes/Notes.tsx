@@ -4,20 +4,30 @@ import Input from '../input/Input';
 import Note from '../note/Note';
 import './Notes.css'
 
-interface INoteProps {
-    data: INote[];
-}
-
-const Notes: React.FC<INoteProps> = ({data}: INoteProps) => {
-    const [noteData, setNoteData] = useState()
+const Notes = () => {
+    const [notes, setNotes] = useState<INote[]>([]);;
     
     const handleClick = () => {
-        const title = document.querySelector('.title-input') as HTMLInputElement;
-        const body = document.querySelector('.body-input') as HTMLInputElement;
+        const titleElement = document.querySelector('.title-input') as HTMLInputElement;
+        const bodyElement = document.querySelector('.body-input') as HTMLInputElement;
 
-        if (title.value.trim() || body.value.trim()) {
-            // create unique id for note
-            // take the {data}: INoteProps and apply the values to it
+        const titleText = titleElement.value.trim();
+        const bodyText = bodyElement.value.trim();
+
+        if (titleText || bodyText) {
+            setNotes((prev: any[]) => {
+                const newNote = {
+                    id: "soonTM", // TODO
+                    title: titleText, 
+                    body: bodyText,
+                    date: new Date()
+                }
+                return [...prev, newNote];
+            })
+
+            // reset values
+            titleElement.value = ""
+            bodyElement.value = ""
         }
     }
 
@@ -25,13 +35,13 @@ const Notes: React.FC<INoteProps> = ({data}: INoteProps) => {
         <>
             <Input onClick={handleClick}/>
             <div className='notes-wrapper'>
-                {data.map(note => {
-                    return <Note 
+                {notes.map((note: INote) => {
+                    return <Note
                         id={note.id}
                         title={note.title}
                         body={note.body}
                         date={note.date}
-                        />
+                    />
                 })}
             </div>
         </>
