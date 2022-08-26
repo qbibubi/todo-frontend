@@ -35,8 +35,9 @@ const Notes = () => {
         <>
             <Input onClick={handleClick}/>
             <div className='notes-wrapper'>
-                {notes.map((note: INote) => {
+                {notes.map((note: INote, idx: number) => {
                     return <Note
+                        key={idx}
                         id={note.id}
                         title={note.title}
                         body={note.body}

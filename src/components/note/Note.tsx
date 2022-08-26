@@ -4,12 +4,12 @@ import './Note.css'
 const Note: React.FC<INote> = ({ id, title, body, date, color}: INote) => {
     return (
         <div className="note" key={id} >
-            <div className="note-title">
+            <p className="note-title">
                 {title} 
-            </div>
-            <div className="note-body">
+            </p>
+            <p className="note-body">
                 {body}
-            </div>
+            </p>
         </div>
     );
 }
