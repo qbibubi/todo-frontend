@@ -1,4 +1,6 @@
+import { v4 as uuidv4 } from "uuid";
 import React, { useState } from 'react';
+
 import INote from '../../interfaces/INote';
 import Input from '../input/Input';
 import Note from '../note/Note';
@@ -17,17 +19,17 @@ const Notes = () => {
         if (titleText || bodyText) {
             setNotes((prev: any[]) => {
                 const newNote = {
-                    id: "soonTM", // TODO
+                    id: uuidv4(),
                     title: titleText, 
                     body: bodyText,
-                    date: new Date()
+                    date: Date.now() // unix timestamp
                 }
                 return [...prev, newNote];
-            })
+            });
 
             // reset values
-            titleElement.value = ""
-            bodyElement.value = ""
+            titleElement.value = "";
+            bodyElement.value = "";
         }
     }
 
