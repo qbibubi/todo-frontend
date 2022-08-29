@@ -7,15 +7,15 @@ const Note: React.FC<INote> = ({ id, title, body, delete: handleDelete}: INote) 
             <p className="note-title">
                 {title} 
             </p>
-            <p className="note-body">
-                {body}
-            </p>
             <button
                 className="note-delete"
                 onClick={()=>handleDelete(id)}
             >
                 x
             </button>
+            <p className="note-body">
+                {body}
+            </p>
         </div>
     );
 }

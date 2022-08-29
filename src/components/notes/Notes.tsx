@@ -22,7 +22,7 @@ const Notes = () => {
                     id: uuidv4(),
                     title: titleText, 
                     body: bodyText,
-                    date: Date.now(), // unix timestamp
+                    date: Date.now() // unix timestamp
                 }
                 return [...prev, newNote];
             });
