@@ -56,7 +56,7 @@ const Notes = () => {
                             className='delete-note'
                             onClick={()=>handleDelete(note.id)}
                         >
-                            X
+                            x
                         </button>
                     </>
                     )

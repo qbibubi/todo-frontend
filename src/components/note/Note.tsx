@@ -1,7 +1,7 @@
 import INote from "../../interfaces/INote"
 import './Note.css'
 
-const Note: React.FC<INote> = ({ id, title, body, date}: INote) => {
+const Note: React.FC<INote> = ({ id, title, body }: INote) => {
     return (
         <div className="note" key={id} >
             <p className="note-title">
