@@ -8,3 +8,10 @@
     max-height: 250px;
     overflow: hidden;
 }
+
+.delete-note {
+    color: var(--font-main);
+    cursor: pointer;
+}
+
+.hidden { display: none; }

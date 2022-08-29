@@ -7,7 +7,7 @@ import Note from '../note/Note';
 import './Notes.css'
 
 const Notes = () => {
-    const [notes, setNotes] = useState<INote[]>([]);;
+    const [notes, setNotes] = useState<INote[]>([]);
     
     const handleClick = () => {
         const titleElement = document.querySelector('.title-input') as HTMLInputElement;
@@ -33,18 +33,33 @@ const Notes = () => {
         }
     }
 
+    const handleDelete = (id: string) => {
+        const filteredNote = notes.filter((n) => n.id !== id);
+        setNotes(() => filteredNote);
+    }
+
     return (
         <>
             <Input onClick={handleClick}/>
             <div className='notes-wrapper'>
                 {notes.map((note: INote, idx: number) => {
-                    return <Note
-                        key={idx}
-                        id={note.id}
-                        title={note.title}
-                        body={note.body}
-                        date={note.date}
-                    />
+                    return (
+                    <>
+                        <Note
+                            key={idx}
+                            id={note.id}
+                            title={note.title}
+                            body={note.body}
+                            date={note.date}        
+                        /> 
+                        <button
+                            className='delete-note'
+                            onClick={()=>handleDelete(note.id)}
+                        >
+                            X
+                        </button>
+                    </>
+                    )
                 })}
             </div>
         </>
