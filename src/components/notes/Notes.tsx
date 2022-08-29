@@ -22,7 +22,7 @@ const Notes = () => {
                     id: uuidv4(),
                     title: titleText, 
                     body: bodyText,
-                    date: Date.now() // unix timestamp
+                    date: Date.now(), // unix timestamp
                 }
                 return [...prev, newNote];
             });
@@ -43,23 +43,14 @@ const Notes = () => {
             <Input onClick={handleClick}/>
             <div className='notes-wrapper'>
                 {notes.map((note: INote, idx: number) => {
-                    return (
-                    <>
-                        <Note
+                    return <Note
                             key={idx}
                             id={note.id}
                             title={note.title}
                             body={note.body}
-                            date={note.date}        
-                        /> 
-                        <button
-                            className='delete-note'
-                            onClick={()=>handleDelete(note.id)}
-                        >
-                            x
-                        </button>
-                    </>
-                    )
+                            date={note.date}
+                            delete={handleDelete}
+                            /> 
                 })}
             </div>
         </>

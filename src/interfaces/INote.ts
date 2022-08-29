@@ -5,7 +5,7 @@ interface INote {
     title: string, 
     body: string,
     date: Date,
-    color?: string
+    delete: Function
 }
 
 export default INote;

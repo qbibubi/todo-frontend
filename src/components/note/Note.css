@@ -12,8 +12,4 @@
 .delete-note {
     color: var(--font-main);
     cursor: pointer;
-    width: 10px;
-    height: 10px;
-    top: 0;
-    right: 0;
 }
