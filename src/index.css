@@ -5,7 +5,9 @@
     --bg-main: #e8eaed;
     --bg-dark: #111011;
     --font-main: #292929;
+    --font-light: #e8eaed;
     --accent: #66ffab;
+    --font-link: #337DFF;
 }
 
 body {
